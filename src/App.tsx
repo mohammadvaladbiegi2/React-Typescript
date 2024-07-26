@@ -2,6 +2,7 @@ import { useState } from "react";
 import Button from "./component/Event-type/Button";
 import Input from "./component/Event-type/Input";
 import Style from "./component/Style-Props/Style";
+import Reducer from "./component/Hooks/Reducer";
 
 const App = ():JSX.Element =>  {
   
@@ -23,6 +24,7 @@ setText(e.target.value)
   <Input changeHandle={onchangeHandler} value={text}/>
 
 <Style style={{"color" : "red"}}/>
+<Reducer />
     </>
   );
 }
