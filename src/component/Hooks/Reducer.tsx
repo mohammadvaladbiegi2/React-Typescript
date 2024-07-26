@@ -2,10 +2,18 @@ import React, { useReducer } from 'react';
 
 // this is all type in reduce we need =>
 
-type actionsType = {
+type UpdateactionsType = {
     paylod: number,
-    type: string
+    type: "increment"|"decrement"|"reset"
+
 }
+
+type ResetTypeactions = {
+    type: "reset"
+}
+
+
+type actionsType = UpdateactionsType | ResetTypeactions
 
 type stateType = { conter: number }
 
@@ -27,6 +35,10 @@ const reduce = (state: stateType, actions: actionsType) => {
             }
 
         }
+        case "reset": {
+            return initialState
+
+        }
 
 
         default: {
@@ -39,15 +51,17 @@ const reduce = (state: stateType, actions: actionsType) => {
 
 const Reducer = (): JSX.Element => {
 
-    const [state, actions] = useReducer(reduce, initialState)
+    const [state, dispach] = useReducer(reduce, initialState)
 
     return (
         <>
             <h1>{state.conter}</h1>
             <hr />
-            <button onClick={() => actions({ type: "increment", paylod: 5 })}>increment 5</button>
+            <button onClick={() => dispach({ type: "increment", paylod: 5 })}>increment 5</button>
             <hr />
-            <button onClick={() => actions({ type: "decrement", paylod: 5 })}>decrement 5</button>
+            <button onClick={() => dispach({ type: "decrement", paylod: 5 })}>decrement 5</button>
+            <hr />
+            <button onClick={() => dispach({type:"reset"})}>Reset to 0</button>
         </>
     );
 }
