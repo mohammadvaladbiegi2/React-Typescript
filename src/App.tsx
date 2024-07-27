@@ -8,6 +8,9 @@ import InputRef from "./component/UseRef-type/input.Ref.Simple";
 import { MutableRef } from "./component/UseRef-type/Mutable.Ref";
 import { Toast } from "./component/Template-Literals-Exclude/Positions";
 import RandomNumber from "./component/Restricting-Props/Random-Number";
+import PrivetPage from "./component/Component-Prop/PrivetPage";
+import Login from "./component/Component-Prop/Login";
+import Panel from "./component/Component-Prop/Panel";
 
 const App = (): JSX.Element => {
 
@@ -34,6 +37,7 @@ const App = (): JSX.Element => {
       <MutableRef />
       <Toast positions="center"/>
       <RandomNumber  value={{value:-10,isNegative:false}}  />
+      <PrivetPage isLogin={false} Login={Login} Panel={Panel}/>
     </ContexThemProvider>
   );
 }
