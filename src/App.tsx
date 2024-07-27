@@ -4,6 +4,8 @@ import Input from "./component/Event-type/Input";
 import Style from "./component/Style-Props/Style";
 import Reducer from "./component/Hooks/Reducer";
 import ContexThemProvider from "./component/ContexAPI/themcontex";
+import InputRef from "./component/UseRef-type/input.Ref.Simple";
+import { MutableRef } from "./component/UseRef-type/Mutable.Ref";
 
 const App = (): JSX.Element => {
 
@@ -26,6 +28,8 @@ const App = (): JSX.Element => {
 
       <Style style={{ "color": "red" }} />
       <Reducer />
+      <InputRef />
+      <MutableRef />
     </ContexThemProvider>
   );
 }

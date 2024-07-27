@@ -8,36 +8,28 @@
 // }
 
 
-// type Props = {
-//     product : {id:string,title:string}[] // we use thise more
-// }
 
 // type Props = {
 //     children : React.ReactNode  // when use children
 // }
 
-// const TypingProps = (props:Props) => {
+type Props = {
+    product: { id: string, title: string }[] // we use thise more
+}
 
- 
-
-// return (
-//         <div>
-//             {props.product[0].title}
-//         </div>
-//     );
-// }
-
-// export default TypingProps;
+const TypingProps = (props: Props) => {
 
 
 
-const TypingProps = () => {
     return (
         <div>
-            
+            {props.product[0].title}
         </div>
     );
 }
 
 export default TypingProps;
+
+
+
 
