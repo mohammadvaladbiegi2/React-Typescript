@@ -7,6 +7,7 @@ import ContexThemProvider from "./component/ContexAPI/themcontex";
 import InputRef from "./component/UseRef-type/input.Ref.Simple";
 import { MutableRef } from "./component/UseRef-type/Mutable.Ref";
 import { Toast } from "./component/Template-Literals-Exclude/Positions";
+import RandomNumber from "./component/Restricting-Props/Random-Number";
 
 const App = (): JSX.Element => {
 
@@ -32,6 +33,7 @@ const App = (): JSX.Element => {
       <InputRef />
       <MutableRef />
       <Toast positions="center"/>
+      <RandomNumber  value={{value:-10,isNegative:false}}  />
     </ContexThemProvider>
   );
 }
