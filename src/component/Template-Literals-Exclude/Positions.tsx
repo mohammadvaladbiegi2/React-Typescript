@@ -19,12 +19,15 @@ type positionType = `${HorizontalPosition}-${VerticalPosition}` // still we have
 // with using Exclude
 
 
-type positionTypeExclude = Exclude<`${HorizontalPosition}-${VerticalPosition}`, 'center-center'> | 'center' // first arg is positions and second arg  There is a situation that I want to be removed 
+type positionTypeExclude = Exclude<`${HorizontalPosition}-${VerticalPosition}`, 'center-center'> | 'center' // first arg is positions and second arg  There is a position that we want to be removed 
 
 // and this | 'center' mean positions also can be single center
 
+type ToastProps = {
+    positions : positionTypeExclude
+}
 
 
-export const Toast = (position: positionTypeExclude) => {
-    return <div>Toast Notification Position - {position}</div>
+export const Toast = ({positions}: ToastProps) => {
+    return <div>Toast Notification positions - {positions}</div>
 }
