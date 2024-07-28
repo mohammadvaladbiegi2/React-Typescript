@@ -11,6 +11,7 @@ import RandomNumber from "./component/Restricting-Props/Random-Number";
 import PrivetPage from "./component/Component-Prop/PrivetPage";
 import Login from "./component/Component-Prop/Login";
 import Panel from "./component/Component-Prop/Panel";
+import UsersPage from "./component/Extracting-Components-Prop-Types/Users.page";
 
 const App = (): JSX.Element => {
 
@@ -38,6 +39,7 @@ const App = (): JSX.Element => {
       <Toast positions="center"/>
       <RandomNumber  value={{value:-10,isNegative:false}}  />
       <PrivetPage isLogin={false} Login={Login} Panel={Panel}/>
+      <UsersPage isLogin={true} name="jams" id={1}/>
     </ContexThemProvider>
   );
 }
